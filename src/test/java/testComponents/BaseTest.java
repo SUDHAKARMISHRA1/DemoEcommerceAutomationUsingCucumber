@@ -3,7 +3,7 @@ package testComponents;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -20,6 +20,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
 
+import com.google.common.io.Files;
+
+import io.cucumber.messages.types.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
 
@@ -67,15 +70,18 @@ public class BaseTest {
 	}
 
 
-	public static String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+	public static String getScreenshot(io.cucumber.java.Scenario sc, WebDriver driver) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
+		byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 		// Open the current date and time
 		String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 
-		File file = new File(System.getProperty("user.dir") + "//FailedScreenshots//" + testCaseName +" "+ timestamp + ".png");
+		File file = new File(System.getProperty("user.dir") + "//FailedScreenshots//" + sc.getName() +" "+ timestamp + ".png");
 		FileUtils.copyFile(source, file);
-		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
+		  
+        sc.attach(screenshot, "image/png", sc.getName());
+		return System.getProperty("user.dir") + "//reports//" + sc.getName() + ".png";
 
 	}
 

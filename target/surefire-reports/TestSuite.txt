@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.657 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 51.997 s <<< FAILURE! - in TestSuite
+runScenario(cucumber.Options.TestRunner)  Time elapsed: 49.667 s  <<< FAILURE!
+java.lang.AssertionError: expected [new arrival] but found [new arrivals]
+

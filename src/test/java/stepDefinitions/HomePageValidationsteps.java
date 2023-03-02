@@ -53,7 +53,7 @@ public class HomePageValidationsteps extends BaseTest {
 	public void user_should_redirected_to_the_home_screen() {
 		String actualHeading = homepage.getScreenHeading();
 		System.out.println(actualHeading);
-		HPM.setHeadingHomeScreen("new arrivals");
+		HPM.setHeadingHomeScreen("new arrival");
 		try {
 			assertEquals(actualHeading, HPM.getHeadingHomeScreen());
 		} catch (Exception e) {
@@ -407,7 +407,7 @@ public class HomePageValidationsteps extends BaseTest {
 	@AfterStep
 	public void getScreenshotOfEachSteps(Scenario sc) throws IOException {
 		if (sc.isFailed()) {
-			HomePageValidationsteps.getScreenshot(sc.getName(), driver);
+			HomePageValidationsteps.getScreenshot(sc,  driver);
 		}
 	}
 
