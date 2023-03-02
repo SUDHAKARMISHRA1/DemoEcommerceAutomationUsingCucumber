@@ -1,0 +1,96 @@
+Final Scenario:
+  ****************************************************************
+ Scenario: Home page with Three Slider and Three Arrivals only
+    Then Test whether the Home page has Three Sliders only
+    And Test whether the Home page has Three Arrivals only
+     And User Close the Browser after test is Finished
+
+  Scenario: Image in Arrivals should navigate Description and Review should available if user clicked on it
+    When Now click the image in the Arrivals
+    Then Test whether it is navigating to next page where the user can add that book into his basket
+    And There should be a description regarding that book the user clicked on
+    When Now click on Reviews tab for the book you clicked on
+    Then There should be a Reviews regarding that book the user clicked on
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Image Add to Basket
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    Then User can view that Book in the Menu item with price
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrival Add to Basket with more Books
+    When Now click the image in the Arrivals
+    And check the number of available stocks
+    And Select more books than the books in stock.
+    And Click on the Add To Basket button which adds that book to your basket
+    Then Now it throws an error prompt like you must enter a value between "1" and "20"
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items and Coupons
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    Then User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
+    When Enter the Coupon code as "krishnasakinala" to get '50rps' off on the total
+    And Click on apply coupon button
+    Then User can able to apply coupon by entering ‘krishnasakinala’ in the coupon textbox which give "50rps" off on the total price
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Coupon value < "450"
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    Then User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
+    When Enter the Coupon code as "krishnasakinala" to get '50rps' off on the total
+    And Click on apply coupon button
+    Then User can not able to apply coupon by entering ‘krishnasakinala’ in the coupon textbox which give '50rps' off on the total price because the coupon is applicable for the book price > '50rps'
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Remove Book
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    And Now click on Remove this icon in Check out page which removes that book from the grid
+    Then User has the feasibility to remove the book at the time of check out also
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Add Book and get Total Amount
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    And Click on textbox value under quantity in Check out page to add or subtract books "10"
+    And Now click on Update Basket to reflect those changes
+    Then User has the feasibility to Update Basket at the time of check out
+    And Now User can find the Total price of the book in the Check out grid
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Checkout Total and Sub Total condition
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    Then Now user can find total and subtotal values just above the Proceed to Checkout button
+    And The total always < subtotal because taxes are added in the subtotal
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Checkout Functionality
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    And Now click on Proceed to Check out button which navigates to payment gateway page
+    Then Clicking on Proceed to Checkout button leads to payment gateway page
+     And User Close the Browser after test is Finished
+
+  Scenario: Arrivals Add to Basket Items Checkout Payment Gateway Place order
+    When Now click the image in the Arrivals
+    And Click on the Add To Basket button which adds that book to your basket
+    And Now click on Item link which navigates to proceed to check out page
+    And Now click on Proceed to Check out button which navigates to payment gateway page
+    And Clicking on Proceed to Checkout button leads to payment gateway page
+    Then User can view Billing Details,Order Details,Additional details and Payment gateway details
+    When Now user can fill his details in billing details form like "fname" "lname" "comp" "useremail@mailinator.com" "Us!12345!" "userphone" "countryname" "addressone" "addresstwo" "city" "statename" "code" "comments" and can opt any payment in the payment gateway like Direct bank transfer,cheque,cash or paypal
+    And Now click on Place Order button to complete process
+    Then On clicking place-order button user completes the process where the page navigates to Order confirmation page with order details,bank details,customer details and billing details.
+     And User Close the Browser after test is Finished
+ 
