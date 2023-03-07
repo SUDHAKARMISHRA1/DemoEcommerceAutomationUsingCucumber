@@ -3,7 +3,6 @@ package testComponents;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -20,9 +19,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
 
-import com.google.common.io.Files;
-
-import io.cucumber.messages.types.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
 
@@ -53,12 +49,16 @@ public class BaseTest {
 			}
 			driver = new ChromeDriver(options);
 
-		} else if (browserName.equalsIgnoreCase("firefox")) {
+		} 
+				
+		else if (browserName.equalsIgnoreCase("firefox")) {
+			System.out.println("Firefox Executed");
 			System.setProperty("webdriver.gecko.driver", "./exefile//geckodriver");
 			driver = new FirefoxDriver();
 			// Firefox
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			// Edge
+			System.out.println("Edge Executed");
 			System.setProperty("webdriver.edge.driver", "./exefile/edge.exe");
 			driver = new EdgeDriver();
 		}

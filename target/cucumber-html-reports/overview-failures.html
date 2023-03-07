@@ -77,7 +77,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>DemoEcommerceAutomation</td>
         <td>1</td>
-      <td>02 Mar 2023, 17:59</td>
+      <td>03 Mar 2023, 13:10</td>
     </tr>
   </tbody>
 </table>
@@ -125,7 +125,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">48.428</span>
+  <span class="lead-duration duration">28.803</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -168,7 +168,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User open the Browser and Navigated to the Application Url</span>
 
-  <span class="lead-duration duration">36.249</span>
+  <span class="lead-duration duration">18.752</span>
 
 </div>
 
@@ -223,11 +223,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">User click on Shop Menu</span>
 
-  <span class="lead-duration duration">0.148</span>
+  <span class="lead-duration duration">10.050</span>
 
 </div>
 
@@ -236,64 +236,46 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-  <div class="inner-level hooks-step-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-4" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">stepDefinitions.HomePageValidationsteps.getScreenshotOfEachSteps(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.NoSuchElementException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Shop&quot;}
+  (Session info: headless chrome=110.0.5481.105)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e1d8cb2e63446e92594835f69c6116c4, findElement {using=link text, value=Shop}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.105, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\DEVELO~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53862}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53862/devtoo..., se:cdpVersion: 110.0.5481.105, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e1d8cb2e63446e92594835f69c6116c4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy26.click(Unknown Source)
+	at pageObjects.HomePage.clickOnShopLink(HomePage.java:52)
+	at stepDefinitions.HomePageValidationsteps.user_click_on_shop_menu(HomePageValidationsteps.java:44)
+	at &#10045;.User click on Shop Menu(file:///C:/Users/developer/eclipse-workspace/DemoEcommerceAutomation/src/test/java/features/homepage.feature:8)
+</pre>
+      </div>
     </div>
   </div>
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">Now click on Home menu button</span>
-
-  <span class="lead-duration duration">11.949</span>
-
-</div>
-
-
-
-
-
 
 
 
@@ -323,6 +305,80 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
               <span class="location name">stepDefinitions.HomePageValidationsteps.getScreenshotOfEachSteps(io.cucumber.java.Scenario)</span>
 
+  <span class="lead-duration duration">0.442</span>
+
+          </div>
+
+
+
+
+
+
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Home page with Three Slider and Three Arrivals only</a>
+      <a href="embeddings/embedding_1148119909.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_1148119909.png">
+      </div>
+    </div>
+  </div>
+  </div>
+
+        </div>
+    </div>
+  </div>
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">Now click on Home menu button</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="inner-level hooks-step-after">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#after-7">
+
+<div class="brief failed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-7" class="inner-level collapse collapsable-details  in ">
+        <div class="hook">
+          <div class="brief skipped">
+            <span class="keyword indention">After</span>
+              <span class="location name">stepDefinitions.HomePageValidationsteps.getScreenshotOfEachSteps(io.cucumber.java.Scenario)</span>
+
   <span class="lead-duration duration">0.000</span>
 
           </div>
@@ -341,11 +397,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">User should redirected to the home screen</span>
 
-  <span class="lead-duration duration">0.080</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -353,26 +409,6 @@ $(document).ready(function() {
 
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-6">
-          <a>java.lang.AssertionError:</a>
-      </div>
-      <div id="msg-6" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: expected [new arrival] but found [new arrivals]
-	at org.testng.Assert.fail(Assert.java:110)
-	at org.testng.Assert.failNotEquals(Assert.java:1577)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-	at org.testng.Assert.assertEquals(Assert.java:131)
-	at org.testng.Assert.assertEquals(Assert.java:655)
-	at org.testng.Assert.assertEquals(Assert.java:665)
-	at stepDefinitions.HomePageValidationsteps.user_should_redirected_to_the_home_screen(HomePageValidationsteps.java:58)
-	at &#10045;.User should redirected to the home screen(file:///C:/Users/developer/eclipse-workspace/DemoEcommerceAutomation/src/test/java/features/homepage.feature:10)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -384,9 +420,9 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-step-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-7">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#after-8">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -396,13 +432,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-7" class="inner-level collapse collapsable-details ">
+    <div id="after-8" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief skipped">
             <span class="keyword indention">After</span>
               <span class="location name">stepDefinitions.HomePageValidationsteps.getScreenshotOfEachSteps(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.749</span>
+  <span class="lead-duration duration">0.000</span>
 
           </div>
 
@@ -411,21 +447,6 @@ $(document).ready(function() {
 
 
 
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-8" class="collapsable-control">
-      <a>Home page with Three Slider and Three Arrivals only</a>
-      <a href="embeddings/embedding_-564628190.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-8" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_-564628190.png">
-      </div>
-    </div>
-  </div>
-  </div>
 
         </div>
     </div>
@@ -494,7 +515,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">stepDefinitions.HomePageValidationsteps.getScenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.003</span>
+  <span class="lead-duration duration">0.006</span>
 
           </div>
 
@@ -667,7 +688,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
               <span class="location name">stepDefinitions.HomePageValidationsteps.tearDown()</span>
 
-  <span class="lead-duration duration">0.262</span>
+  <span class="lead-duration duration">0.086</span>
 
           </div>
 

@@ -3,8 +3,8 @@ package models;
 public class HomePageModel {
 
 	private String HeadingHomeScreen;
-	private int SliderCount;
-	private int ArrivalCount;
+	private String SliderCount;
+	private String ArrivalCount;
 	
 	public String getHeadingHomeScreen() {
 		return HeadingHomeScreen;
@@ -12,16 +12,16 @@ public class HomePageModel {
 	public void setHeadingHomeScreen(String headingHomeScreen) {
 		HeadingHomeScreen = headingHomeScreen;
 	}
-	public int getSliderCount() {
+	public String getSliderCount() {
 		return SliderCount;
 	}
-	public void setSliderCount(int sliderCount) {
+	public void setSliderCount(String sliderCount) {
 		SliderCount = sliderCount;
 	}
-	public int getArrivalCount() {
+	public String getArrivalCount() {
 		return ArrivalCount;
 	}
-	public void setArrivalCount(int arrivalCount) {
+	public void setArrivalCount(String arrivalCount) {
 		ArrivalCount = arrivalCount;
 	}
 

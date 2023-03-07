@@ -130,10 +130,38 @@
                   </a> <!-- runScenario("Home page with Three Slider and Three Arrivals only", "Validating the functionality associated with...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Home page with Three Slider and Three Arrivals only","Validating the functionality associated with the Home Screen of the application")</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [new arrival] but found [new arrivals]
-	at stepDefinitions.HomePageValidationsteps.user_should_redirected_to_the_home_screen(HomePageValidationsteps.java:58)
+                  <div class="stack-trace">java.lang.NoClassDefFoundError: org/apache/commons/io/output/UnsynchronizedByteArrayOutputStream
+	at testComponents.ManageExternalTestData.getdata(ManageExternalTestData.java:22)
+	at testComponents.FetchTestDataFromExcelSheet.fetch_testdata(FetchTestDataFromExcelSheet.java:15)
+	at stepDefinitions.HomePageValidationsteps.user_should_redirected_to_the_home_screen(HomePageValidationsteps.java:57)
 	at ✽.User should redirected to the home screen(file:///C:/Users/developer/eclipse-workspace/DemoEcommerceAutomation/src/test/java/features/homepage.feature:10)
-... Removed 6 stack frames
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.io.output.UnsynchronizedByteArrayOutputStream
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at testComponents.ManageExternalTestData.getdata(ManageExternalTestData.java:22)
+	at testComponents.FetchTestDataFromExcelSheet.fetch_testdata(FetchTestDataFromExcelSheet.java:15)
+	at stepDefinitions.HomePageValidationsteps.user_should_redirected_to_the_home_screen(HomePageValidationsteps.java:57)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 36 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -205,12 +233,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'cucumber.Options.TestRunner')
-data.setCell(0, 3, 49653);
+data.setCell(0, 3, 28993);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 28 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -238,18 +266,18 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">cucumber.Options.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@7499eac7)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@1da1380b)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Home page with Three Slider and Three Arrivals only", "Validating the functionality associated with...)</span>
-                <span class="method-start">569 ms</span>
+                <span class="method-start">578 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">50244 ms</span>
+                <span class="method-start">29599 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

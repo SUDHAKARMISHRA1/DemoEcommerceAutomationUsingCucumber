@@ -4,7 +4,6 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
-
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
@@ -20,6 +19,7 @@ import pageObjects.CheckoutScreen;
 import pageObjects.HomePage;
 import pageObjects.ProductDetails;
 import testComponents.BaseTest;
+import testComponents.FetchTestDataFromExcelSheet;
 
 public class HomePageValidationsteps extends BaseTest {
 
@@ -27,10 +27,12 @@ public class HomePageValidationsteps extends BaseTest {
 	public ProductDetails proddetails;
 	public CartScreen cart;
 	public CheckoutScreen checkout;
+	public String sheetname = "HomePage";
 
 	HomePageModel HPM = new HomePageModel();
 	ProductDetailsModel PDM = new ProductDetailsModel();
 	CartScreenModel CSM = new CartScreenModel();
+	FetchTestDataFromExcelSheet fData = new FetchTestDataFromExcelSheet();
 
 	@Given("User open the Browser and Navigated to the Application Url")
 	public void user_open_the_browser_and_navigated_to_the_application_url() throws IOException {
@@ -50,10 +52,10 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@Then("User should redirected to the home screen")
-	public void user_should_redirected_to_the_home_screen() {
+	public void user_should_redirected_to_the_home_screen() throws IOException {
 		String actualHeading = homepage.getScreenHeading();
-		System.out.println(actualHeading);
-		HPM.setHeadingHomeScreen("new arrival");
+		String expectedHeading = fData.fetch_testdata("TC_01", sheetname);
+		HPM.setHeadingHomeScreen(expectedHeading);
 		try {
 			assertEquals(actualHeading, HPM.getHeadingHomeScreen());
 		} catch (Exception e) {
@@ -63,24 +65,24 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@Then("Test whether the Home page has Three Sliders only")
-	public void test_whether_the_home_page_has_three_sliders_only() {
+	public void test_whether_the_home_page_has_three_sliders_only() throws IOException {
 		int actualsize = homepage.getSliderSize();
-		System.out.println(actualsize);
-		HPM.setSliderCount(3);
+		String expectedSliderCount = fData.fetch_testdata("TC_02", sheetname);
+		HPM.setSliderCount(expectedSliderCount);
 		try {
-			assertEquals(actualsize, HPM.getSliderCount());
+			assertEquals(actualsize, Integer.parseInt(HPM.getSliderCount()));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 
 	@Then("Test whether the Home page has Three Arrivals only")
-	public void test_whether_the_home_page_has_three_arrivals_only() {
+	public void test_whether_the_home_page_has_three_arrivals_only() throws IOException {
 		int actualsize = homepage.getArrivalCount();
-		System.out.println(actualsize);
-		HPM.setArrivalCount(3);
+		String expectedArrivalCount = fData.fetch_testdata("TC_03", sheetname);
+		HPM.setArrivalCount(expectedArrivalCount);
 		try {
-			assertEquals(actualsize, HPM.getArrivalCount());
+			assertEquals(actualsize, Integer.parseInt(HPM.getArrivalCount()));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -92,10 +94,10 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@Then("Test whether it is navigating to next page where the user can add that book into his basket")
-	public void test_whether_it_is_navigating_to_next_page_where_the_user_can_add_that_book_into_his_basket() {
+	public void test_whether_it_is_navigating_to_next_page_where_the_user_can_add_that_book_into_his_basket() throws IOException {
 		String actualTitle = proddetails.getProductTitle();
-		System.out.println(actualTitle);
-		PDM.setProductTitle("Hello");
+		String expectedProductTitle = fData.fetch_testdata("TC_04", sheetname);
+		PDM.setProductTitle(expectedProductTitle);
 		try {
 			assertEquals(actualTitle, PDM.getProductTitle());
 		} catch (Exception e) {
@@ -104,10 +106,10 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@Then("There should be a description regarding that book the user clicked on")
-	public void there_should_be_a_description_regarding_that_book_the_user_clicked_on() {
+	public void there_should_be_a_description_regarding_that_book_the_user_clicked_on() throws IOException {
 		String actualDesc = proddetails.getProductDescription();
-		System.out.println(actualDesc);
-		PDM.setProductDescription("");
+		String expectedProductDesc = fData.fetch_testdata("TC_05", sheetname);
+		PDM.setProductDescription(expectedProductDesc);
 		try {
 			assertEquals(actualDesc, PDM.getProductDescription());
 
@@ -122,10 +124,10 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@When("There should be a Reviews regarding that book the user clicked on")
-	public void there_should_be_a_reviews_regarding_that_book_the_user_clicked_on() {
+	public void there_should_be_a_reviews_regarding_that_book_the_user_clicked_on() throws IOException {
 		String actualReview = proddetails.getProductReviews();
-		System.out.println(actualReview);
-		PDM.setProductReviews("");
+		String expectedProductReview = fData.fetch_testdata("TC_06", sheetname);
+		PDM.setProductReviews(expectedProductReview);
 		try {
 			assertEquals(actualReview, PDM.getProductReviews());
 
@@ -140,13 +142,15 @@ public class HomePageValidationsteps extends BaseTest {
 	}
 
 	@Then("User can view that Book in the Menu item with price")
-	public void user_can_view_that_book_in_the_menu_item_with_price() {
+	public void user_can_view_that_book_in_the_menu_item_with_price() throws IOException {
 		String actualpriceandcount = homepage.getProductCountAndPrice();
 		String[] CleanData = actualpriceandcount.replaceAll("[^0-9,., ]", "").split(" ");
 		String actualProductCount = CleanData[0];
 		String actualProductPrice = CleanData[1];
-		PDM.setProductCount(7);
-		PDM.setProductPrice(7);
+		String expectedProductCount = fData.fetch_testdata("TC_08", sheetname);
+		String expectedProductPrice = fData.fetch_testdata("TC_09", sheetname);
+		PDM.setProductCount(expectedProductCount);
+		PDM.setProductPrice(expectedProductPrice);
 		try {
 			assertEquals(actualProductCount, PDM.getProductCount());
 

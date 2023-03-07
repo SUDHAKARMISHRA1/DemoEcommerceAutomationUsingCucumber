@@ -6,9 +6,9 @@ public class ProductDetailsModel {
 	private String ProductTitle;
 	private String ProductDescription;
 	private String ProductReviews;
-	private int ProductCount;
-	private int ProductPrice;
-	private int TotalStock;
+	private String ProductCount;
+	private String ProductPrice;
+	private String TotalStock;
 	
 
 	public String getProductTitle() {
@@ -29,22 +29,22 @@ public class ProductDetailsModel {
 	public void setProductReviews(String productReviews) {
 		ProductReviews = productReviews;
 	}
-	public int getProductCount() {
+	public String getProductCount() {
 		return ProductCount;
 	}
-	public void setProductCount(int productCount) {
+	public void setProductCount(String productCount) {
 		ProductCount = productCount;
 	}
-	public int getProductPrice() {
+	public String getProductPrice() {
 		return ProductPrice;
 	}
-	public void setProductPrice(int productPrice) {
+	public void setProductPrice(String productPrice) {
 		ProductPrice = productPrice;
 	}
-	public int getTotalStock() {
+	public String getTotalStock() {
 		return TotalStock;
 	}
-	public void setTotalStock(int totalStock) {
+	public void setTotalStock(String totalStock) {
 		TotalStock = totalStock;
 	}
 	
