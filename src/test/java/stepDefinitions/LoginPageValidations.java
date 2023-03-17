@@ -2,6 +2,10 @@ package stepDefinitions;
 
 import java.io.IOException;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,12 +27,13 @@ public class LoginPageValidations extends BaseTest {
 	
 	@When("User click on Login button")
 	public void user_click_on_login_button() throws IOException {
-		loginpage = launchApplication();
+		System.out.println("Log1");
+		//loginpage = launchApplication();
 	}
 	
 	@Given("User will be on Login Screen")
 	public void user_will_be_on_login_screen() {
-	   
+		System.out.println("Log2");
 	}
 	
 	@When("User Enter the username")
@@ -50,5 +55,5 @@ public class LoginPageValidations extends BaseTest {
 	public void user_should_login_successfully() {
 	    
 	}
-
+	
 }

@@ -1,4 +1,3 @@
-@RegressionSuit
 Feature: Validating the functionality associated with the Home Screen of the application
   This feature file will have all the Scenario associated with the home screen
   for, UI as well as functional perspective

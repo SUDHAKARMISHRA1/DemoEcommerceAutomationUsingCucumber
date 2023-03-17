@@ -4,9 +4,8 @@ Feature: Validating the Login functionality
     
     Background: User navigation to the application and Open the Home screen to test all the Scenario mentioned below
     Given User open the Browser and Navigated to the Application Url
-    Then User should redirected to the home screen
-    When User click on Login button 
-    
+    When User click on Login button
+   
     
     Scenario: Validating login test with positive data set
     Given User will be on Login Screen

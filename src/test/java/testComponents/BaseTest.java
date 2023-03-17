@@ -19,6 +19,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.HomePage;
 
@@ -43,6 +44,7 @@ public class BaseTest {
 		if (browserName.contains("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
+			options.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
 			if (browserName.contains("headless")) {
 				options.addArguments("headless");
